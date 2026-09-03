@@ -33,58 +33,22 @@
     overflow-x:hidden;
   }
 
-  .aurora{
+  .bg-video{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+  .bg-overlay{
     position:fixed;
     inset:0;
     z-index:0;
-    pointer-events:none;
-    overflow:hidden;
-  }
-  .aurora span{
-    position:absolute;
-    border-radius:50%;
-    filter: blur(60px);
-    opacity:0.35;
-  }
-  .aurora .a1{
-    width:340px; height:340px;
-    background: var(--pink);
-    top:-10%; left:-12%;
-    animation: driftA 18s ease-in-out infinite;
-  }
-  .aurora .a2{
-    width:300px; height:300px;
-    background: var(--blue);
-    top:35%; right:-15%;
-    animation: driftB 22s ease-in-out infinite;
-  }
-  .aurora .a3{
-    width:260px; height:260px;
-    background: var(--gold);
-    bottom:-8%; left:10%;
-    animation: driftC 20s ease-in-out infinite;
-  }
-  .aurora .a4{
-    width:220px; height:220px;
-    background: var(--pink-deep);
-    bottom:20%; right:5%;
-    animation: driftA 26s ease-in-out infinite reverse;
-  }
-  @keyframes driftA{
-    0%,100%{ transform: translate(0,0) scale(1); }
-    33%{ transform: translate(30px,40px) scale(1.15); }
-    66%{ transform: translate(-20px,20px) scale(0.9); }
-  }
-  @keyframes driftB{
-    0%,100%{ transform: translate(0,0) scale(1); }
-    50%{ transform: translate(-40px,50px) scale(1.2); }
-  }
-  @keyframes driftC{
-    0%,100%{ transform: translate(0,0) scale(1); }
-    50%{ transform: translate(35px,-30px) scale(1.1); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .aurora span{ animation:none; }
+    background: linear-gradient(180deg,
+      rgba(255,246,236,0.88) 0%,
+      rgba(255,246,236,0.93) 40%,
+      rgba(255,246,236,0.96) 100%);
   }
 
   .wrap{ position:relative; z-index:1; }
@@ -381,12 +345,10 @@
 </head>
 <body>
 
-<div class="aurora">
-  <span class="a1"></span>
-  <span class="a2"></span>
-  <span class="a3"></span>
-  <span class="a4"></span>
-</div>
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="assets/bg-video.mp4" type="video/mp4">
+</video>
+<div class="bg-overlay"></div>
 
 <div class="wrap">
 
