@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SuperMass | Todo desde 1 sol</title>
+<meta name="description" content="SuperMass: importadores directos de China. Todo para tu hogar desde S/1 en Chorrillos, Ate, Villa María del Triunfo y Comas.">
+<meta property="og:title" content="SuperMass | Todo desde 1 sol">
+<meta property="og:description" content="Importadores directos de China. Tiendas en Chorrillos, Ate, Villa María del Triunfo y Comas.">
+<meta property="og:image" content="assets/banner.jpg">
+<meta name="theme-color" content="#E0157F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mag:#E0157F; --mag-deep:#B80E66; --mag-soft:#FDE8F2;
+    --tur:#3FB5A5; --tur-deep:#24897C; --tur-soft:#E3F6F3;
+    --ink:#2A1A33; --muted:#7C6E88; --line:#F0E6EE;
+    --bg:#FFF8FB; --white:#fff;
+    --r-lg:24px; --r-md:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html{background:var(--bg)}
+  body{
+    font-family:'Poppins',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(900px 500px at 110% -10%, rgba(63,181,165,.18), transparent 60%),
+      radial-gradient(800px 500px at -10% 0%, rgba(224,21,127,.14), transparent 60%),
+      transparent;
+    min-height:100vh;padding-bottom:40px;
+  }
+  .wrap{max-width:480px;margin:0 auto;padding:0 16px}
+
+
+  /* FONDO ANIMADO */
+  .bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+  .bg-veil{position:fixed;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(255,248,251,.35) 0%,rgba(255,248,251,.55) 45%,rgba(255,248,251,.72) 100%)}
+  .coin{position:fixed;z-index:-1;width:34px;height:34px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#FFE9A0,#F7C531 60%,#C9930A 100%);border:2px solid #FFF4C8;
+    box-shadow:0 6px 14px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;
+    font:800 11px Poppins,sans-serif;color:#7A4B00;bottom:-60px;animation:rise linear infinite;opacity:.9}
+  .coin:nth-child(1){left:6%;animation-duration:14s}
+  .coin:nth-child(2){left:28%;width:26px;height:26px;font-size:9px;animation-duration:18s;animation-delay:4s}
+  .coin:nth-child(3){left:58%;animation-duration:16s;animation-delay:8s}
+  .coin:nth-child(4){left:82%;width:28px;height:28px;font-size:9px;animation-duration:20s;animation-delay:2s}
+  .coin:nth-child(5){left:44%;width:22px;height:22px;font-size:8px;animation-duration:22s;animation-delay:11s}
+  @keyframes rise{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-115vh) rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.coin{display:none}.bg-video{display:none}}
+
+  /* HERO */
+  .hero{margin-top:16px;border-radius:var(--r-lg);overflow:hidden;position:relative;
+        box-shadow:0 20px 40px -22px rgba(184,14,102,.55)}
+  .hero img{width:100%;display:block}
+  .identity{text-align:center;margin-top:-58px;position:relative;z-index:2}
+  .avatar{width:124px;height:124px;border-radius:50%;margin:0 auto;background:#fff;border:5px solid #fff;
+          box-shadow:0 12px 26px -10px rgba(42,26,51,.35);overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);object-position:center 40%}
+  .brand{margin-top:12px;font-weight:800;font-size:28px;letter-spacing:-.3px;line-height:1}
+  .brand .s{color:var(--mag)} .brand .m{color:var(--tur)}
+  .slogan{margin-top:6px;font-weight:600;font-size:14px;color:var(--mag-deep)}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+  .badge{font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:100px;background:var(--white);
+         border:1.5px solid var(--line);color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+  .badge.mag{background:var(--mag);border-color:var(--mag);color:#fff}
+  .badge.tur{background:var(--tur-soft);border-color:#C7ECE6;color:var(--tur-deep)}
+
+
+  /* VIDEO PROMO */
+  .promo{margin-top:22px;background:var(--white);border:1.5px solid var(--line);border-radius:var(--r-lg);padding:10px;
+         box-shadow:0 18px 34px -24px rgba(184,14,102,.6)}
+  .promo-frame{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;background:#000;max-height:78vh;margin:0 auto}
+  .promo-frame video{width:100%;height:100%;object-fit:cover;display:block}
+  .sound{position:absolute;right:10px;bottom:10px;border:0;cursor:pointer;font:600 12px Poppins,sans-serif;color:#fff;
+         background:rgba(224,21,127,.92);padding:8px 12px;border-radius:100px;box-shadow:0 6px 14px rgba(0,0,0,.3)}
+  .promo-cap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:8px}
+
+  /* BUTTONS */
+  .actions{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+  .btn{display:flex;align-items:center;gap:14px;background:var(--white);border:1.5px solid var(--line);
+       border-radius:18px;padding:12px 14px;text-decoration:none;color:var(--ink);
+       box-shadow:0 8px 18px -14px rgba(42,26,51,.4);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+  .btn:active{transform:scale(.98)}
+  @media (hover:hover){.btn:hover{transform:translateY(-2px);border-color:#F6C3DC;box-shadow:0 14px 24px -16px rgba(184,14,102,.45)}}
+  .btn.primary{background:linear-gradient(135deg,#25D366,#12A150);border-color:transparent;color:#fff}
+  .btn.primary .sub{color:rgba(255,255,255,.85)}
+  .btn.primary .ico{background:rgba(255,255,255,.2)}
+  .btn.primary .arrow{color:#fff}
+  .ico{flex:0 0 42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff}
+  .ico svg{width:21px;height:21px}
+  .i-store{background:linear-gradient(135deg,var(--mag),var(--mag-deep))}
+  .i-tiktok{background:#111}
+  .i-fb{background:#1877F2}
+  .i-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+  .txt{flex:1;font-weight:600;font-size:15px;line-height:1.25}
+  .sub{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+  .arrow{color:#CDBFD0;font-size:22px;line-height:1}
+
+  /* STORES */
+  .head{margin:36px 0 14px;text-align:center}
+  .head h2{font-size:22px;font-weight:800;letter-spacing:-.2px}
+  .head h2 span{color:var(--mag)}
+  .head p{font-size:13px;color:var(--muted);margin-top:4px}
+  .stores{display:flex;flex-direction:column;gap:16px}
+  .store{background:var(--white);border-radius:var(--r-lg);overflow:hidden;border:1.5px solid var(--line);
+         box-shadow:0 16px 30px -24px rgba(42,26,51,.5)}
+  .store-photo{position:relative;height:150px;background:#eee}
+  .store-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .store-photo .tag{position:absolute;left:12px;bottom:12px;background:var(--white);color:var(--ink);
+                    font-weight:700;font-size:13px;padding:6px 12px;border-radius:100px;
+                    box-shadow:0 6px 14px -6px rgba(0,0,0,.35);display:flex;align-items:center;gap:6px}
+  .store-photo .tag i{width:8px;height:8px;border-radius:50%;background:var(--mag);display:inline-block}
+  .store-photo .floor{position:absolute;right:12px;top:12px;background:var(--tur);color:#fff;font-weight:700;
+                      font-size:11.5px;padding:5px 10px;border-radius:100px}
+  .store-body{padding:14px 16px 16px}
+  .addr{display:flex;gap:10px;font-size:13.5px;line-height:1.5}
+  .addr svg{flex:0 0 18px;height:18px;color:var(--mag);margin-top:2px}
+  .addr small{display:block;color:var(--muted);font-size:12px}
+  .store-actions{display:flex;gap:8px;margin-top:12px}
+  .s-btn{flex:1;text-align:center;font-family:inherit;font-size:13px;font-weight:600;padding:10px 8px;border-radius:12px;
+         text-decoration:none;cursor:pointer;border:1.5px solid transparent}
+  .s-btn.go{background:var(--mag);color:#fff}
+  .s-btn.map{background:var(--tur-soft);color:var(--tur-deep);border-color:#C7ECE6}
+  .map-wrap{display:none;margin-top:12px;border-radius:14px;overflow:hidden;border:1.5px solid var(--line)}
+  .map-wrap.open{display:block}
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block}
+
+  /* FOOTER */
+  .why{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .why div{background:var(--white);border:1.5px solid var(--line);border-radius:var(--r-md);padding:12px 6px;text-align:center}
+  .why b{display:block;font-size:17px;color:var(--mag);font-weight:800}
+  .why span{font-size:11px;color:var(--muted);line-height:1.3;display:block;margin-top:2px}
+  .footer{margin-top:28px;text-align:center}
+  .footer .brand{font-size:18px}
+  .footer p{font-size:11.5px;color:var(--muted);margin-top:6px}
+</style>
+</head>
+<body>
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/bg-poster.jpg">
+  <source src="assets/bg-video.mp4" type="video/mp4">
+</video>
+<div class="bg-veil"></div>
+<div aria-hidden="true"><span class="coin">S/1</span><span class="coin">S/1</span><span class="coin">S/1</span><span class="coin">S/1</span><span class="coin">S/1</span></div>
+<div class="wrap">
+
+  <div class="hero">
+    <img src="assets/banner.jpg" alt="SuperMass: todos los productos que necesitas, siempre desde 1 sol">
+  </div>
+
+  <div class="identity">
+    <div class="avatar"><img src="assets/logo_full.jpg" alt="Logo SuperMass"></div>
+    <div class="brand"><span class="s">Super</span><span class="m">Mass</span></div>
+    <div class="slogan">El Gigante del Ahorro para tu Hogar</div>
+    <div class="badges">
+      <span class="badge mag">Todo desde S/1</span>
+      <span class="badge tur">Importadores directos de China</span>
+      <span class="badge">4 sedes en Lima</span>
+    </div>
+  </div>
+
+  <div class="promo">
+    <div class="promo-frame">
+      <video id="promo" src="assets/promo.mp4" poster="assets/promo-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="sound" id="sound" type="button">Activar sonido</button>
+    </div>
+    <p class="promo-cap">Del contenedor a tu casa: importamos directo de China</p>
+  </div>
+
+  <div class="actions">
+    <a class="btn" href="#tiendas">
+      <span class="ico i-store"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.75 7-13a7 7 0 0 0-14 0c0 5.25 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+      <span class="txt">Nuestras tiendas<span class="sub">Chorrillos · Ate · Villa María del Triunfo · Comas</span></span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="btn" href="https://www.tiktok.com/@tienda_supermass_oficial" target="_blank" rel="noopener">
+      <span class="ico i-tiktok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></span>
+      <span class="txt">TikTok<span class="sub">@tienda_supermass_oficial</span></span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="btn" href="https://www.facebook.com/SUPERMASSTIENDA" target="_blank" rel="noopener">
+      <span class="ico i-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3.5h-3V7.8c0-1 .3-1.7 1.7-1.7h1.3V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3.5h2.5V21h3.7z"/></svg></span>
+      <span class="txt">Facebook<span class="sub">SUPERMASSTIENDA</span></span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="btn" href="https://www.instagram.com/tiendaoficialsupermass/" target="_blank" rel="noopener">
+      <span class="ico i-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      <span class="txt">Instagram<span class="sub">@tiendaoficialsupermass</span></span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+
+  <div class="head" id="tiendas">
+    <h2>Nuestras <span>tiendas</span></h2>
+    <p>Elige la más cercana y toca "Cómo llegar"</p>
+  </div>
+
+  <div class="stores">
+
+    <div class="store">
+      <div class="store-photo"><img src="assets/sede-chorrillos.jpg" alt="Fachada SuperMass Chorrillos" loading="lazy"><span class="tag"><i></i>Chorrillos</span></div>
+      <div class="store-body">
+        <div class="addr"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <div>Av. 24 de Octubre Mz. F5 Lt. 9, AA.HH. Túpac Amaru de Villa<small>También en Av. 24 de Octubre Mz. E Lt. 5</small></div></div>
+        <div class="store-actions">
+          <a class="s-btn go" href="https://www.google.com/maps/search/?api=1&query=-12.1948884,-76.9846562" target="_blank" rel="noopener">Cómo llegar</a>
+          <button class="s-btn map" data-map="https://www.google.com/maps?q=-12.1948884,-76.9846562&z=16&output=embed">Ver mapa</button>
+        </div>
+        <div class="map-wrap"></div>
+      </div>
+    </div>
+
+    <div class="store">
+      <div class="store-photo"><img src="assets/sede-ate.jpg" alt="Fachada SuperMass Ate" loading="lazy"><span class="tag"><i></i>Ate</span></div>
+      <div class="store-body">
+        <div class="addr"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <div>Av. Central 134-A, Ate Vitarte<small>Frente a Oncofeme</small></div></div>
+        <div class="store-actions">
+          <a class="s-btn go" href="https://www.google.com/maps/search/?api=1&query=-12.0251215,-76.9203958" target="_blank" rel="noopener">Cómo llegar</a>
+          <button class="s-btn map" data-map="https://www.google.com/maps?q=-12.0251215,-76.9203958&z=16&output=embed">Ver mapa</button>
+        </div>
+        <div class="map-wrap"></div>
+      </div>
+    </div>
+
+    <div class="store">
+      <div class="store-photo"><img src="assets/sede-vmt.jpg" alt="Fachada SuperMass Villa María del Triunfo" loading="lazy" style="object-position:center 55%"><span class="tag"><i></i>Villa María del Triunfo</span><span class="floor">2do y 3er piso</span></div>
+      <div class="store-body">
+        <div class="addr"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <div>Av. José Carlos Mariátegui 772, Mz. C3 Lt. 6<small>P.J. José Carlos Mariátegui 1ra etapa · Sube por la escalera al 2do piso</small></div></div>
+        <div class="store-actions">
+          <a class="s-btn go" href="https://www.google.com/maps/search/?api=1&query=-12.1549316,-76.9527642" target="_blank" rel="noopener">Cómo llegar</a>
+          <button class="s-btn map" data-map="https://www.google.com/maps?q=-12.1549316,-76.9527642&z=16&output=embed">Ver mapa</button>
+        </div>
+        <div class="map-wrap"></div>
+      </div>
+    </div>
+
+    <div class="store">
+      <div class="store-photo"><img src="assets/sede-comas.jpg" alt="Fachada SuperMass Comas" loading="lazy"><span class="tag"><i></i>Comas</span></div>
+      <div class="store-body">
+        <div class="addr"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <div>Av. Arequipa 579, Comas<small>Frente al parque principal y la Municipalidad de Comas</small></div></div>
+        <div class="store-actions">
+          <a class="s-btn go" href="https://www.google.com/maps/search/?api=1&query=Av.+Arequipa+579,+Comas,+Lima" target="_blank" rel="noopener">Cómo llegar</a>
+          <button class="s-btn map" data-map="https://www.google.com/maps?q=Av.+Arequipa+579,+Comas,+Lima&z=16&output=embed">Ver mapa</button>
+        </div>
+        <div class="map-wrap"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="why">
+    <div><b>S/1</b><span>Precios desde un sol</span></div>
+    <div><b>China</b><span>Importación directa, sin intermediarios</span></div>
+    <div><b>4</b><span>Tiendas en Lima</span></div>
+  </div>
+
+  <div class="footer">
+    <div class="brand"><span class="s">Super</span><span class="m">Mass</span></div>
+    <p>Todo desde 1 sol · Chorrillos · Ate · VMT · Comas</p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.s-btn.map').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var box = b.closest('.store-body').querySelector('.map-wrap');
+      if (!box.firstChild) {
+        var f = document.createElement('iframe');
+        f.loading = 'lazy'; f.allowFullscreen = true; f.src = b.dataset.map;
+        box.appendChild(f);
+      }
+      var open = box.classList.toggle('open');
+      b.textContent = open ? 'Ocultar mapa' : 'Ver mapa';
+    });
+  });
+  var v=document.getElementById('promo'),sb=document.getElementById('sound');
+  sb.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play();}sb.textContent=v.muted?'Activar sonido':'Silenciar';});
+</script>
+</body>
+</html>
